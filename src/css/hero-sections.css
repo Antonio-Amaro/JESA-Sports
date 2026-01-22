@@ -1,0 +1,164 @@
+
+    /* ============================================================
+       1. VARIABLES Y GENERALES
+       ============================================================ */
+    :root {
+        --primary-green: #007d5c;
+        --soft-gray: #f8f9fa;
+        --text-muted: #6c757d;
+        --card-radius: 20px;
+    }
+
+    /* ============================================================
+       2. SECCIÓN CATEGORÍAS (Las 3 imágenes superiores)
+       ============================================================ */
+    .category-card {
+        position: relative;
+        overflow: hidden;
+        height: 500px;
+        border-radius: 15px;
+        transition: transform 0.3s ease;
+    }
+
+    .category-card:hover {
+        transform: scale(1.01);
+    }
+
+    .category-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Contenedor de botones alineados a la izquierda sobre imagen */
+    .category-actions {
+        position: absolute;
+        bottom: 25px;
+        left: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Alineación perfecta a la izquierda */
+        gap: 8px;
+        z-index: 10;
+    }
+
+    .category-btn-main {
+        background-color: white;
+        color: black;
+        padding: 10px 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: none;
+        border-radius: 6px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .category-btn-secondary {
+        color: white;
+        text-decoration: underline;
+        font-weight: 500;
+        font-size: 0.9rem;
+        padding-left: 2px;
+    }
+
+    /* ============================================================
+       3. SECCIÓN PRODUCTOS (New Arrivals / Featured)
+       ============================================================ */
+    
+    /* Forzamos que todas las cards de la fila tengan la misma altura */
+    .product-card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        border: none !important;
+        background: transparent;
+    }
+
+    /* Contenedor de imagen: Mantiene alineación horizontal */
+    .product-img-container {
+        aspect-ratio: 1 / 1; /* Cuadrado perfecto */
+        width: 100%;
+        background-color: var(--soft-gray);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        border-radius: var(--card-radius) !important;
+        overflow: hidden !important;
+        position: relative;
+    }
+
+    .product-img-container img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain; /* Evita que fotos de distintos tamaños rompan el grid */
+        transition: transform 0.3s ease;
+    }
+
+    .product-card:hover img {
+        transform: scale(1.1);
+    }
+
+    /* Información del producto con Flexbox para empujar el precio al final */
+    .product-info {
+        padding: 15px 5px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1; /* Ocupa el espacio sobrante */
+    }
+
+    .product-category {
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        letter-spacing: 1px;
+        margin-bottom: 4px;
+    }
+
+    .product-name {
+        font-size: 1rem;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-bottom: 8px;
+        /* Limita a 2 líneas para mantener simetría */
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        min-height: 2.5rem; 
+    }
+
+    /* Alineación de precios */
+    .product-price-container {
+        margin-top: auto; /* Truco Senior: empuja el precio al fondo siempre */
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .current-price {
+        font-weight: 800;
+        color: var(--primary-green);
+        font-size: 1.1rem;
+    }
+
+    .old-price {
+        color: #ced4da;
+        text-decoration: line-through;
+        font-size: 0.85rem;
+    }
+
+    /* Badge de SALE */
+    .badge-sale {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        background-color: #d4ff3f !important; /* Verde lima de la imagen */
+        color: black !important;
+        font-weight: bold;
+        font-size: 0.7rem;
+        padding: 5px 12px;
+        border-radius: 8px;
+        z-index: 5;
+    }
