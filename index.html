@@ -31,13 +31,10 @@
                         <a class="nav-link" href="#">Inicio</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="#">Productos</a>
+                        <a class="nav-link" href="productos.html">Productos</a>
                         </li>
                         <li class="nav-item">
                         <a class="nav-link" href="devs.html">Nosotros</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="#">Contacto</a>
                         </li>
                     </ul>
                 <!-- Botones derecha -->
@@ -45,7 +42,7 @@
                     <a href="#" class="py-1 px-2 cart-icon">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M15 11C15 12.6569 13.6569 14 12 14C10.3431 14 9 12.6569 9 11M4 7H20M4 7V13C4 19.3668 5.12797 20.5 12 20.5C18.872 20.5 20 19.3668 20 13V7M4 7L5.44721 4.10557C5.786 3.428 6.47852 3 7.23607 3H16.7639C17.5215 3 18.214 3.428 18.5528 4.10557L20 7" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
                     </a>
-                    <a href="#" class="py-1 px-2 cart-icon">
+                    <a href="javascript:void(0)" onclick="validarAccesoAdmin()" class="py-1 px-2 cart-icon">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M5 21C5 17.134 8.13401 14 12 14C15.866 14 19 17.134 19 21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
                     </a>
                     <a href="#" class="btn btn-shop border-0">Comprar</a>
@@ -73,7 +70,7 @@
 
                         <div
                             class="d-flex flex-column flex-sm-row gap-3 align-items-stretch align-items-sm-center mb-5">
-                            <a href="#products" class="btn btn-lg btn-primary hero-cta">
+                            <a href="/productos.html" class="btn btn-lg btn-primary hero-cta">
                                 Explora la colección <span aria-hidden="true" class="ms-2">→</span>
                             </a>
                         </div>
@@ -109,7 +106,15 @@
         </section>
 
 
-        <section class="first-section">
+        <section class="first-section py-5">
+            <div class="container text-center">
+                <span class="badge rounded-pill bg-success-subtle text-success px-3 py-2 mb-3">Categorías</span>
+                <h2 class="display-5 fw-bold text-dark mb-3">Pensados para cada deporte</h2>
+                <p class="text-muted mx-auto mb-5" style="max-width: 600px;">
+                    Descubre nuestras distintas colecciones
+                </p>
+            </div>
+
 
             <div class="container px-2 py-4">
                 <div class="row g-4">
@@ -118,23 +123,23 @@
                         <div class="category-card">
                             <img src="https://i.pinimg.com/1200x/3f/c4/db/3fc4dbf30f6635602f358d54bb6f987e.jpg"
                                 alt="Lifestyle" class="category-img">
-                            <a href="#skate" class="category-btn ">Skate</a>
+                            <a href="/skate.html" class="category-btn ">Skate</a>
                         </div>
                     </div>
 
                     <div class="col-12 col-md-4">
                         <div class="category-card">
                             <img src="https://i.pinimg.com/736x/5c/54/f5/5c54f5a2f35865e68785ec471dca065f.jpg"
-                                alt="Football" class="category-img">
-                            <a href="/footbal" class="category-btn "> Basquetball</a>
+                                alt="Basquetbol" class="category-img">
+                            <a href="/basquetbol.html" class="category-btn ">Básquetbol</a>
                         </div>
                     </div>
 
                     <div class="col-12 col-md-4">
                         <div class="category-card">
                             <img src="https://i.pinimg.com/736x/7d/38/aa/7d38aa4740c38e2724e130df5cfc5d84.jpg"
-                                alt="Basketball" class="category-img">
-                            <a href="/basketball" class="category-btn ">Futbol </a>
+                                alt="Futbol" class="category-img">
+                            <a href="/futbol.html" class="category-btn ">Futbol</a>
 
 
                         </div>
@@ -144,7 +149,7 @@
             </div>
         </section>
 
-        <section class="featured-products py-5 bg-light">
+        <section class="featured-products py-5 ">
             <div class="container text-center">
                 <span class="badge rounded-pill bg-success-subtle text-success px-3 py-2 mb-3">Productos destacados</span>
                 <h2 class="display-5 fw-bold text-dark mb-3">Encuentra tu mejor estilo</h2>
@@ -154,13 +159,7 @@
 
                 </p>
 
-                
-
-                 
-
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-
-
 
                     <div class="product-card shadow-sm">
                         <div class="product-img-container">
@@ -236,8 +235,6 @@
                         </div>
                     </div>
 
-                    
-
                      <div class="product-card shadow-sm">
                         <div class="product-img-container">
                             <img src="https://i.pinimg.com/736x/0e/40/c0/0e40c07607b47c25ca4f3b33f6d281e8.jpg" alt="Nombre">
@@ -247,7 +244,6 @@
                             <h5 class="product-name">Playera Barcelona Edicion Motomami </h5>
                             <div class="product-price-container">
                                 <span class="current-price">$1700</span>
-                               
                             </div>
                         </div>
                     </div>
@@ -266,8 +262,6 @@
                         </div>
                     </div>
 
-
-
                     <div class="product-card shadow-sm">
                         <div class="product-img-container">
                             <img src="                    https://i.pinimg.com/736x/dd/b1/42/ddb142aa82e0fbfdf2666425719d5f5c.jpg" alt="Nombre">
@@ -281,15 +275,9 @@
                             </div>
                         </div>
                     </div>
-
-
                 </div>
-
-
-
-
                 <div class="mt-5">
-                    <a href="#" class="text-success fw-bold text-decoration-none view-all-link">
+                    <a href="/productos.html" class="text-success fw-bold text-decoration-none view-all-link">
                         Ver más productos <i class="bi bi-arrow-right"></i>
                     </a>
                 </div>
@@ -325,7 +313,6 @@
           <li><a href="#">Inicio</a></li>
           <li><a href="#">Productos</a></li>
           <li><a href="#">Nosotros</a></li>
-          <li><a href="#">Contacto</a></li>
         </ul>
       </div>
       <!-- Categories -->
@@ -364,6 +351,8 @@
 </footer>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="./src/js/key.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

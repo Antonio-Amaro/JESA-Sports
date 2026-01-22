@@ -1,164 +1,220 @@
+.hero{
+  position: relative;
+  min-height: 78vh;
+  display: flex;
+  align-items: center;
 
-    /* ============================================================
-       1. VARIABLES Y GENERALES
-       ============================================================ */
-    :root {
-        --primary-green: #007d5c;
-        --soft-gray: #f8f9fa;
-        --text-muted: #6c757d;
-        --card-radius: 20px;
-    }
+  background: url("../img/JESASports.webp") center/cover no-repeat;
+}
 
-    /* ============================================================
-       2. SECCIÓN CATEGORÍAS (Las 3 imágenes superiores)
-       ============================================================ */
-    .category-card {
-        position: relative;
-        overflow: hidden;
-        height: 500px;
-        border-radius: 15px;
-        transition: transform 0.3s ease;
-    }
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 127, 76, 0.88) 0%,
+    rgba(0, 92, 55, 0.94) 100%
+  );
+  pointer-events:none;
+}
 
-    .category-card:hover {
-        transform: scale(1.01);
-    }
+.hero .container{
+  position: relative;
+  z-index: 1;
+}
 
-    .category-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+.hero-badge{
+  background: rgba(255,255,255,0.14);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.18);
+  font-weight: 600;
+}
 
-    /* Contenedor de botones alineados a la izquierda sobre imagen */
-    .category-actions {
-        position: absolute;
-        bottom: 25px;
-        left: 25px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start; /* Alineación perfecta a la izquierda */
-        gap: 8px;
-        z-index: 10;
-    }
+.hero-title,
+.hero-subtitle,
+.hero-stat,
+.hero-divider{
+  color: #fff;
+}
 
-    .category-btn-main {
-        background-color: white;
-        color: black;
-        padding: 10px 20px;
-        font-weight: bold;
-        text-transform: uppercase;
-        text-decoration: none;
-        border-radius: 6px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
+.hero-highlight{
+  background: linear-gradient(135deg, var(--brand-lime) 0%, #9ad64a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
 
-    .category-btn-secondary {
-        color: white;
-        text-decoration: underline;
-        font-weight: 500;
-        font-size: 0.9rem;
-        padding-left: 2px;
-    }
+.hero-cta{
+  border-radius: 14px;
+  font-weight: 700;
+  background: var(--brand-lime);
+  color: var(--brand-green-900);
+  border: 0;
+}
 
-    /* ============================================================
-       3. SECCIÓN PRODUCTOS (New Arrivals / Featured)
-       ============================================================ */
-    
-    /* Forzamos que todas las cards de la fila tengan la misma altura */
-    .product-card {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        border: none !important;
-        background: transparent;
-    }
+.hero-cta:hover{
+  filter: brightness(0.95);
+  background: var(--soft-gray);
+  color: var(--brand-lime);
+}
 
-    /* Contenedor de imagen: Mantiene alineación horizontal */
-    .product-img-container {
-        aspect-ratio: 1 / 1; /* Cuadrado perfecto */
-        width: 100%;
-        background-color: var(--soft-gray);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-        border-radius: var(--card-radius) !important;
-        overflow: hidden !important;
-        position: relative;
-    }
+.hero-divider{
+  border-color: rgba(255,255,255,0.18);
+}
 
-    .product-img-container img {
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: contain; /* Evita que fotos de distintos tamaños rompan el grid */
-        transition: transform 0.3s ease;
-    }
+@media (max-width: 575.98px){
+  .hero{ min-height: 72vh; }
+  .hero-title{ font-size: 2.3rem; }
+}
 
-    .product-card:hover img {
-        transform: scale(1.1);
-    }
+.category-card{
+  position: relative;
+  overflow: hidden;
+  height: 500px;
+  border-radius: var(--radius-md);
+  transition: transform 0.3s ease;
+}
 
-    /* Información del producto con Flexbox para empujar el precio al final */
-    .product-info {
-        padding: 15px 5px;
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1; /* Ocupa el espacio sobrante */
-    }
+.category-card:hover{ transform: scale(1.01); }
 
-    .product-category {
-        font-size: 0.7rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        color: var(--text-muted);
-        letter-spacing: 1px;
-        margin-bottom: 4px;
-    }
+.category-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-    .product-name {
-        font-size: 1rem;
-        font-weight: 700;
-        color: #1a1a1a;
-        margin-bottom: 8px;
-        /* Limita a 2 líneas para mantener simetría */
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        min-height: 2.5rem; 
-    }
+.category-btn{
+  position: absolute;
+  left: 25px;
+  bottom: 25px;
+  display: inline-block;
+  background-color: #fff;
+  color: #000;
+  padding: 10px 20px;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+}
 
-    /* Alineación de precios */
-    .product-price-container {
-        margin-top: auto; /* Truco Senior: empuja el precio al fondo siempre */
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
+.category-actions{
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  z-index: 10;
+}
 
-    .current-price {
-        font-weight: 800;
-        color: var(--primary-green);
-        font-size: 1.1rem;
-    }
+.category-btn-main{
+  background-color: #fff;
+  color: #000;
+  padding: 10px 20px;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+}
 
-    .old-price {
-        color: #787879;
-        text-decoration: line-through;
-        font-size: 0.85rem;
-    }
+.category-btn-secondary{
+  color: #fff;
+  text-decoration: underline;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding-left: 2px;
+}
 
-    /* Badge de SALE */
-    .badge-sale {
-        position: absolute;
-        top: 15px;
-        left: 15px;
-        background-color: #d4ff3f !important; /* Verde lima de la imagen */
-        color: black !important;
-        font-weight: bold;
-        font-size: 0.7rem;
-        padding: 5px 12px;
-        border-radius: 8px;
-        z-index: 5;
-    }
+.product-card{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: none !important;
+  background: transparent;
+}
+
+.product-img-container{
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  background-color: var(--soft-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: var(--radius-lg) !important;
+  overflow: hidden !important;
+  position: relative;
+}
+
+.product-img-container img{
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover img{ transform: scale(1.1); }
+
+.product-info{
+  padding: 15px 5px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-category{
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.product-name{
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 2.5rem;
+}
+
+.product-price-container{
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.current-price{
+  font-weight: 800;
+  color: var(--brand-green);
+  font-size: 1.1rem;
+}
+
+.old-price{
+  color: #787879;
+  text-decoration: line-through;
+  font-size: 0.85rem;
+}
+
+.badge-sale{
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: #d4ff3f !important;
+  color: #000 !important;
+  font-weight: 700;
+  font-size: 0.7rem;
+  padding: 5px 12px;
+  border-radius: 8px;
+  z-index: 5;
+}
