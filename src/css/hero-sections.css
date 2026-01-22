@@ -3,6 +3,8 @@
             overflow: hidden;
             height: 500px; /* Altura fija para mantener simetría */
             transition: transform 0.3s ease;
+            border-radius: 20px; 
+            
         }
 
         .category-card:hover {
@@ -10,6 +12,7 @@
         }
 
         .category-img {
+            
             width: 100%;
             height: 100%;
             object-fit: cover; /* Asegura que la imagen llene el espacio sin deformarse */
@@ -19,8 +22,8 @@
             position: absolute;
             bottom: 20px;
             left: 20px;
-            background-color: white;
-            color: black;
+            background-color: null;
+            color: rgb(248, 248, 248);
             border: none;
             padding: 10px 20px;
             font-weight: bold;
@@ -30,6 +33,31 @@
         }
 
         .category-btn:hover {
-            background-color: #f8f9fa;
-            color: #000;
+            
         }
+
+        .product-img-container {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    /* Ajusta el valor en px o rem según prefieras */
+    
+    padding: 20px;
+    background-color: #f8f9fa; /* Asegúrate que el fondo se vea */
+}
+
+    .product-img-container img {
+        max-height: 100%;
+        width: auto;
+        transition: transform 0.3s ease;
+        
+    }
+
+    .product-card:hover img {
+        transform: scale(1.1); /* Zoom suave al producto */
+        
+    }
+
+    .product-info p {
+        font-weight: 500;
+        color: #1a1a1a;
+    }
