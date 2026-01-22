@@ -1,19 +1,12 @@
 class ProductosController {
   constructor() {
     const almacenado = localStorage.getItem('productos');
-    if (almacenado) {
-      this.productos = JSON.parse(almacenado);
-    } else {
-      this.productos = [];
-      // Cargar productos por defecto desde JSON en /data
-      this.cargarDesdeJSON();
-    }
+    this.productos = almacenado ? JSON.parse(almacenado) : [];
   }
 
   async cargarDesdeJSON() {
     try {
-      const response = await fetch('src/data/productos.json'); // ruta ajustada
-      if (!response.ok) throw new Error('No se pudo cargar productos.json');
+      const response = await fetch('src/data/productos.json');
       const data = await response.json();
       this.productos = data;
       this.guardar();
@@ -22,23 +15,31 @@ class ProductosController {
     }
   }
 
-  agregarProducto({nombre, tipo, genero, descripcion, precio, deporte}) {
-    const id = Date.now();
-    const producto = {id, nombre, tipo, genero, descripcion, precio, deporte};
+  agregarProducto({nombre, tipo, genero, descripcion, precio, deporte, imagen}) {
+    const producto = {
+      id: Date.now(),
+      nombre,
+      tipo,
+      genero,
+      descripcion,
+      precio,
+      deporte,
+      imagen
+    };
     this.productos.push(producto);
     this.guardar();
-  }
-
-  guardar() {
-    localStorage.setItem('productos', JSON.stringify(this.productos));
   }
 
   obtenerTodos() {
     return this.productos;
   }
 
-  importarProductos(arregloJson) {
-    this.productos = arregloJson;
+  guardar() {
+    localStorage.setItem('productos', JSON.stringify(this.productos));
+  }
+
+  importarProductos(json) {
+    this.productos = json;
     this.guardar();
   }
 

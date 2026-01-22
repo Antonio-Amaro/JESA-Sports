@@ -8,55 +8,84 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-  <header class="container my-5">
-    <h1>Registrar Producto</h1>
-  </header>
-  <main class="container">
-    <form id="nuevoProductoFormulario">
-      <div class="form-group">
-        <label for="nombreProducto">Nombre del producto</label>
-        <input type="text" id="nombreProducto" class="form-control" required>
-      </div>
-      <div class="form-group">
-        <label for="tipoProducto">Tipo</label>
-        <select id="tipoProducto" class="form-control">
-          <option value="prenda">Prenda</option>
-          <option value="accesorio">Accesorio</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="generoProducto">Género</label>
-        <select id="generoProducto" class="form-control">
-          <option value="hombre">Hombre</option>
-          <option value="mujer">Mujer</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="descripcionProducto">Descripción</label>
-        <textarea id="descripcionProducto" class="form-control" required></textarea>
-      </div>
-      <div class="form-group">
-        <label for="precioProducto">Precio</label>
-        <input type="number" id="precioProducto" class="form-control" required>
-      </div>
-      <div class="form-group">
-        <label for="deporteProducto">Deporte</label>
-        <select id="deporteProducto" class="form-control">
-          <option value="futbol">Futbol</option>
-          <option value="skate">Skate</option>
-          <option value="basquetbol">Basquetbol</option>
-        </select>
-      </div>
-      <button type="submit" class="btn btn-primary btn-block">Agregar Producto</button>
-    </form>
 
-    <hr>
-    <button id="exportarProductos" class="btn btn-success mb-3">Generar productos.json</button>
-    <input type="file" id="importarArchivo" accept=".json" class="form-control">
-    <div id="mensaje" class="mt-2"></div>
-  </main>
+<header class="container my-5">
+  <h1>Registrar Producto</h1>
+</header>
 
-  <script src="src/js/productosController.js"></script>
-  <script src="src/js/adminProductos.js"></script>
+<main class="container">
+  <form id="nuevoProductoFormulario">
+
+    <div class="form-group">
+      <label for="nombreProducto">Nombre del producto</label>
+      <input type="text" id="nombreProducto" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+      <label for="tipoProducto">Tipo</label>
+      <select id="tipoProducto" class="form-control">
+        <option value="prenda">Prenda</option>
+        <option value="accesorio">Accesorio</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="generoProducto">Género</label>
+      <select id="generoProducto" class="form-control">
+        <option value="hombre">Hombre</option>
+        <option value="mujer">Mujer</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="descripcionProducto">Descripción</label>
+      <textarea id="descripcionProducto" class="form-control" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="precioProducto">Precio</label>
+      <input type="number" id="precioProducto" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+      <label for="deporteProducto">Deporte</label>
+      <select id="deporteProducto" class="form-control">
+        <option value="futbol">Fútbol</option>
+        <option value="skate">Skate</option>
+        <option value="basquetbol">Basquetbol</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="imagenProducto">URL de la imagen</label>
+      <input type="url" id="imagenProducto" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+      <img id="previewImagen" class="img-fluid d-none" style="max-height:200px;">
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block">
+      Agregar Producto
+    </button>
+  </form>
+
+  <hr>
+
+  <button id="exportarProductos" class="btn btn-success mb-3">
+    Generar productos.json
+  </button>
+
+  <input type="file" id="importarArchivo" accept=".json" class="form-control">
+
+  <div id="mensaje" class="mt-3"></div>
+
+  <a href="productos.html" class="btn btn-link mt-2">
+    Ver productos
+  </a>
+</main>
+
+<script src="src/js/productosController.js"></script>
+<script src="src/js/adminProductos.js"></script>
 </body>
 </html>
