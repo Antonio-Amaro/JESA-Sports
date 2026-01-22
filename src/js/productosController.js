@@ -12,7 +12,7 @@ class ProductosController {
 
   async cargarDesdeJSON() {
     try {
-      const response = await fetch('data/productos.json'); // ruta ajustada
+      const response = await fetch('src/data/productos.json'); // ruta ajustada
       if (!response.ok) throw new Error('No se pudo cargar productos.json');
       const data = await response.json();
       this.productos = data;
