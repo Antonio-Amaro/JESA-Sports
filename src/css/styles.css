@@ -31,6 +31,24 @@ body{
   color: var(--text-dark);
 }
 
+body {
+  transform: translateX(0);
+  opacity: 1;
+  transition:
+    transform 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+body.page-exit {
+  transform: translateX(-18px);
+  opacity: 0;
+}
+
+body.page-enter {
+  transform: translateX(18px);
+  opacity: 0;
+}
+
 h1,h2,h3,h4,h5,h6{
   font-family: "Space Grotesk", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
@@ -76,6 +94,25 @@ h1,h2,h3,h4,h5,h6{
   color: var(--brand-lime);
 }
 
+.logo-svg {
+  height: 40px; 
+  width: auto;
+  max-width: 160px;
+  display: block;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  padding: 4px 0;
+}
+
+@media (min-width: 768px) {
+  .logo-svg {
+    height: 44px;
+  }
+}
+
 .cart-icon:hover{
   background-color: rgba(255,255,255,0.10);
   border-radius: 10px;
@@ -101,6 +138,11 @@ h1,h2,h3,h4,h5,h6{
 .footer-title{
   font-weight: 600;
   margin-bottom: 1rem;
+}
+.logo-svg2 {
+  height: 90px;
+  width: auto;
+  max-width: 220px;
 }
 
 .footer-text{
