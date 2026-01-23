@@ -30,7 +30,7 @@ Nuestros desarrolladores han trabajado arduamente para crear una experiencia de 
 
 ## ✨ Características Principales
 
-* **Diseño Responsivo:** Optimizado para móviles, tablets y escritorio con Tailwind CSS.
+* **Diseño Responsivo:** Optimizado para móviles, tablets y escritorio con Bootstrap y Tailwind CSS.
 * **Animaciones Premium:** Transiciones suaves y efectos de entrada escalonados.
 * **Panel de Administración:** Acceso restringido mediante llave maestra gestionada con SweetAlert2.
 * **Catálogo Dinámico:** Visualización profesional de productos deportivos.
