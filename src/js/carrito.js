@@ -12,19 +12,26 @@ function render() {
 
   items.forEach(p => {
     const div = document.createElement('div');
-    div.className = 'card mb-3 p-3 carrito-item d-flex align-items-center';
+    div.className = 'card mb-3 p-3 carrito-item d-flex flex-column flex-md-row align-items-start gap-2';
 
     div.innerHTML = `
       <img src="${p.imagen || 'src/img/sin-imagen.png'}" alt="${p.nombre}">
-      <div class="flex-grow-1">
+      <div class="d-flex flex-column flex-md-row gap-1 align-items-start justify-content-between w-100">
         <h5>${p.nombre}</h5>
-        <p>Precio unitario: $${p.precio}</p>
-        <p>
-          Cantidad: <input type="number" min="1" value="${p.cantidad}" style="width:60px">
-        </p>
-        <p>Subtotal: $${(p.precio * p.cantidad).toFixed(2)}</p>
+        <div class="info-item d-flex flex-md-column">
+          <p>Precio unitario:</p>
+          <span>$${p.precio}</span>
+        </div>
+        <div class="info-item d-flex flex-md-column">
+          <p>Cantidad:</p>
+          <input type="number" min="1" value="${p.cantidad}" style="width:60px">
+        </div>
+        <div class="info-item d-flex flex-md-column">
+          <p>Subtotal:</p>
+          <span>$${(p.precio * p.cantidad).toFixed(2)}</span>
+        </div>
+        <button class="btn btn-danger">x</button>
       </div>
-      <button class="btn btn-danger">Retirar todos los productos</button>
     `;
 
     div.querySelector('input').addEventListener('change', e => {
