@@ -21,7 +21,7 @@ async function mostrarProductos() {
 
     articulo.innerHTML = `
       <div class="card h-100">
-        <img src="${producto.imagen || 'src/img/sin-imagen.png'}"
+        <img src="${producto.imagen || 'src/img/camisaAzul.png'}"
              class="card-img-top" alt="${producto.nombre}">
         <div class="card-body d-flex flex-column">
           <h5 class="card-title">${producto.nombre}</h5>
