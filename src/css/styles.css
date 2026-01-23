@@ -18,7 +18,9 @@
 
 :root{
   --bs-primary: var(--brand-green);
+  --bs-primary-rgb: 0, 127, 76;
   --bs-secondary: var(--brand-lime);
+  --bs-secondary-rgb: 198, 219, 75;
   --bs-border-radius: 0.75rem;
 }
 
@@ -185,4 +187,24 @@ h1,h2,h3,h4,h5,h6{
   color: #cfe8dc;
   text-decoration: none;
   font-size: 0.9rem;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--brand-green);
+  --bs-btn-border-color: var(--brand-green);
+  --bs-btn-hover-bg: var(--brand-green-900);
+  --bs-btn-hover-border-color: var(--brand-green-900);
+  --bs-btn-active-bg: var(--brand-green-900);
+  --bs-btn-active-border-color: var(--brand-green-900);
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--brand-green);
+  --bs-btn-border-color: var(--brand-green);
+  --bs-btn-hover-bg: var(--brand-green);
+  --bs-btn-hover-border-color: var(--brand-green);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-active-bg: var(--brand-green-900);
+  --bs-btn-active-border-color: var(--brand-green-900);
+  --bs-btn-active-color: #fff;
 }
