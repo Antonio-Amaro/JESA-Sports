@@ -208,3 +208,13 @@ h1,h2,h3,h4,h5,h6{
   --bs-btn-active-border-color: var(--brand-green-900);
   --bs-btn-active-color: #fff;
 }
+
+.product-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.product-link:hover {
+  color: inherit;
+}
