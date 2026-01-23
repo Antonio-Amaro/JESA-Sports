@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap');
 
 :root{
   --brand-green: #007F4C;
@@ -31,6 +32,10 @@ body{
   color: var(--text-dark);
   overflow-x: hidden;
   opacity: 1;
+}
+
+.hero-title {
+  font-family: "Cal Sans", sans-serif;;
 }
 
 body {
