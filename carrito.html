@@ -11,62 +11,28 @@
 </head>
 <body>
 
-    <div class="container cart-container-main">
-        <div class="row g-4">
-            
-            <div class="col-lg-8">
-                <div class="card border-0 shadow-sm p-4 rounded-4">
-                    <div class="d-flex justify-content-between align-items-center mb-4">
-                        <h4 class="fw-bold mb-0">Mi Carrito</h4>
-                        <span id="contador-items" class="badge bg-primary rounded-pill">0 productos</span>
-                    </div>
+   <div class="container my-5">
+  <h1>Tu carrito</h1>
 
-                    <div id="empty-cart-msg" class="text-center py-5 d-none">
-                        <p class="text-muted">No hay productos en tu carrito todavía.</p>
-                        <a href="index.html" class="btn btn-dark rounded-pill px-4">Volver a la tienda</a>
-                    </div>
+  <a href="productos.html" class="btn btn-link mb-3"><= Seguir comprando</a>
 
-                    <div id="cart-items-list">
-                        </div>
-                </div>
-            </div>
+  <div id="listaCarrito"></div>
 
-            <div class="col-lg-4">
-                <div class="card summary-card shadow-sm p-4">
-                    <h5 class="fw-bold mb-4">Resumen de Compra</h5>
-                    
-                    <div class="d-flex justify-content-between mb-3">
-                        <span class="text-muted">Subtotal</span>
-                        <span id="subtotal-precio" class="fw-bold">$0.00</span>
-                    </div>
-                    
-                    <div class="d-flex justify-content-between mb-3">
-                        <span class="text-muted">Envío</span>
-                        <span class="text-success fw-bold">Gratis</span>
-                    </div>
-                    
-                    <hr class="my-4">
-                    
-                    <div class="d-flex justify-content-between mb-4">
-                        <span class="fs-5 fw-bold">Total</span>
-                        <span id="total-precio" class="fs-4 fw-bold text-primary">$0.00</span>
-                    </div>
+  <h3 class="mt-4">
+    Total: $<span id="total">0</span>
+  </h3>
 
-                    <button class="btn btn-primary w-100 py-3 fw-bold rounded-pill mb-3">
-                        Pagar ahora
-                    </button>
-                    
-                    <div class="text-center">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" width="60" class="me-2">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" width="40" class="me-2">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" width="35">
-                    </div>
-                </div>
-            </div>
+  <div class="mt-3 metodos-pago">
+    <p>Métodos de pago aceptados:</p>
+    <img src="src/img/paypal.png" alt="PayPal">
+    <img src="src/img/visa.png" alt="Visa">
+    <img src="src/img/mastercard.png" alt="MasterCard">
+  </div>
 
-        </div>
-    </div>
+  <button id="comprar" class="btn btn-success mt-3">Finalizar compra</button>
+</div>
 
-    <script src="/src/js/carrito.js"></script>
+<script src="src/js/CarritoController.js"></script>
+<script src="src/js/carrito.js"></script>
 </body>
 </html>
