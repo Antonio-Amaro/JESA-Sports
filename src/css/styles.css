@@ -76,6 +76,25 @@ header{
   color: var(--brand-lime);
 }
 
+.logo-svg {
+  height: 40px; 
+  width: auto;
+  max-width: 160px;
+  display: block;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  padding: 4px 0;
+}
+
+@media (min-width: 768px) {
+  .logo-svg {
+    height: 44px;
+  }
+}
+
 .cart-icon:hover{
   background-color: rgba(255,255,255,0.10);
   border-radius: 10px;
@@ -101,6 +120,11 @@ header{
 .footer-title{
   font-weight: 600;
   margin-bottom: 1rem;
+}
+.logo-svg2 {
+  height: 90px;
+  width: auto;
+  max-width: 220px;
 }
 
 .footer-text{
