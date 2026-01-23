@@ -1,0 +1,20 @@
+# Dependencias (nunca se suben porque son muy pesadas)
+node_modules/
+
+# Archivos de entorno (para seguridad si luego usas .env)
+.env
+
+# Logs y errores
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+*.log
+
+# Archivos del sistema (basura de Windows/Mac)
+.DS_Store
+Thumbs.db
+
+# Base de datos local o archivos temporales
+productos.json.tmp
+.vscode/

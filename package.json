@@ -1,0 +1,26 @@
+{
+  "name": "devs",
+  "version": "1.0.0",
+  "description": "¡Bienvenido a **JESA Sports**! Una plataforma moderna diseñada para atletas que buscan superar sus límites. Este proyecto combina un diseño responsivo elegante con funcionalidades de administración seguras.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Antonio-Amaro/JESA-Sports.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Antonio-Amaro/JESA-Sports/issues"
+  },
+  "homepage": "https://github.com/Antonio-Amaro/JESA-Sports#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "multer": "^2.0.2"
+  }
+}

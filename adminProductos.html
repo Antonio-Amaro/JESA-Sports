@@ -3,89 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, nofollow">
-  <title>Panel Admin Productos</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>Panel Admin | Tailwind Edition</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          dark: '#1a1a1a',
+          emerald_custom: '#10b981',
+        }
+      }
+    }
+  }
+</script>
 
-<header class="container my-5">
-  <h1>Registrar Producto</h1>
+<body class="bg-gray-50 min-h-screen text-gray-900">
+
+<header class="bg-dark text-white py-8 shadow-xl">
+  <div class="container mx-auto px-4">
+    <h1 class="text-4xl font-extrabold tracking-tight">Panel de Control -<span class="text-emerald_custom">- Inventario</span></h1>
+    <p class="text-gray-400 mt-2">Gestiona tus productos.</p>
+  </div>
 </header>
 
-<main class="container">
-  <form id="nuevoProductoFormulario">
+<main class="container mx-auto px-4 max-w-5xl -mt-8">
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    
+    <div class="lg:col-span-1">
+      <form id="nuevoProductoFormulario" class="bg-white shadow-2xl rounded-2xl p-6 sticky top-8 border border-gray-100">
+        <h2 id="formTitle" class="text-xl font-bold mb-6 text-dark flex items-center gap-2">
+          <span class="w-2 h-6 bg-emerald_custom rounded-full"></span>
+          Nuevo Producto
+        </h2>
 
-    <div class="form-group">
-      <label for="nombreProducto">Nombre del producto</label>
-      <input type="text" id="nombreProducto" class="form-control" required>
+        <div class="space-y-4">
+          <div>
+            <label class="block text-xs font-bold uppercase text-gray-500 mb-1">Nombre</label>
+            <input type="text" id="nombreProducto" required class="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-emerald_custom outline-none">
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold uppercase text-gray-500 mb-1">Precio</label>
+              <input type="number" id="precioProducto" required class="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-emerald_custom outline-none">
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase text-gray-500 mb-1">Deporte</label>
+              <select id="deporteProducto" class="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-xl outline-none">
+                <option value="futbol">Fútbol</option>
+                <option value="skate">Skate</option>
+                <option value="basquetbol">Basquetbol</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold uppercase text-gray-500 mb-1">Imagen</label>
+            <label class="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:bg-emerald-50 hover:border-emerald_custom transition">
+              <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                <p class="text-sm text-gray-500"><span class="font-semibold">Sube un archivo</span></p>
+                <p class="text-xs text-gray-400">Cualquier formato de imagen</p>
+              </div>
+              <input type="file" id="imagenProducto" class="hidden" accept="image/*" />
+            </label>
+            <img id="previewImagen" class="hidden mt-4 h-32 w-full object-cover rounded-xl shadow-md border">
+          </div>
+
+          <div class="pt-4 space-y-2">
+            <button type="submit" id="btnSubmit" class="w-full bg-dark text-white font-bold py-3 rounded-xl hover:bg-emerald_custom transition-all duration-300 shadow-lg">
+              Guardar Producto
+            </button>
+            <button type="button" id="btnCancelarEdit" class="hidden w-full bg-gray-200 text-gray-700 font-bold py-2 rounded-xl hover:bg-gray-300 transition">
+              Cancelar Edición
+            </button>
+          </div>
+        </div>
+      </form>
     </div>
 
-    <div class="form-group">
-      <label for="tipoProducto">Tipo</label>
-      <select id="tipoProducto" class="form-control">
-        <option value="prenda">Prenda</option>
-        <option value="accesorio">Accesorio</option>
-      </select>
+    <div class="lg:col-span-2">
+      <div class="bg-white shadow-xl rounded-2xl p-6 border border-gray-100">
+        <div class="flex justify-between items-center mb-6">
+          <h3 class="text-2xl font-bold text-dark">Catálogo Actual</h3>
+          <span id="productCount" class="bg-emerald-100 text-emerald-700 text-xs font-bold px-3 py-1 rounded-full">0 Productos</span>
+        </div>
+        <div id="listaProductosAdmin" class="grid grid-cols-1 gap-4">
+          </div>
+      </div>
     </div>
 
-    <div class="form-group">
-      <label for="generoProducto">Género</label>
-      <select id="generoProducto" class="form-control">
-        <option value="hombre">Hombre</option>
-        <option value="mujer">Mujer</option>
-      </select>
-    </div>
-
-    <div class="form-group">
-      <label for="descripcionProducto">Descripción</label>
-      <textarea id="descripcionProducto" class="form-control" required></textarea>
-    </div>
-
-    <div class="form-group">
-      <label for="precioProducto">Precio</label>
-      <input type="number" id="precioProducto" class="form-control" required>
-    </div>
-
-    <div class="form-group">
-      <label for="deporteProducto">Deporte</label>
-      <select id="deporteProducto" class="form-control">
-        <option value="futbol">Fútbol</option>
-        <option value="skate">Skate</option>
-        <option value="basquetbol">Basquetbol</option>
-      </select>
-    </div>
-
-    <div class="form-group">
-      <label for="imagenProducto">URL de la imagen</label>
-      <input type="url" id="imagenProducto" class="form-control" required>
-    </div>
-
-    <div class="form-group">
-      <img id="previewImagen" class="img-fluid d-none" style="max-height:200px;">
-    </div>
-
-    <button type="submit" class="btn btn-primary btn-block">
-      Agregar Producto
-    </button>
-  </form>
-
-  <hr>
-
-  <button id="exportarProductos" class="btn btn-success mb-3">
-    Generar productos.json
-  </button>
-
-  <input type="file" id="importarArchivo" accept=".json" class="form-control">
-
-  <div id="mensaje" class="mt-3"></div>
-
-  <a href="productos.html" class="btn btn-link mt-2">
-    Ver productos
-  </a>
+  </div>
 </main>
-
-<script src="src/js/productosController.js"></script>
-<script src="src/js/adminProductos.js"></script>
-</body>
-</html>
