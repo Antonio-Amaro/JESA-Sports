@@ -12,19 +12,26 @@ function render() {
 
   items.forEach(p => {
     const div = document.createElement('div');
-    div.className = 'card mb-3 p-3 carrito-item d-flex align-items-center';
+    div.className = 'card mb-3 p-3 carrito-item d-flex flex-column flex-md-row align-items-start gap-2';
 
     div.innerHTML = `
       <img src="${p.imagen || 'src/img/sin-imagen.png'}" alt="${p.nombre}">
-      <div class="flex-grow-1">
+      <div class="d-flex flex-column flex-md-row gap-1 align-items-start justify-content-between w-100">
         <h5>${p.nombre}</h5>
-        <p>Precio unitario: $${p.precio}</p>
-        <p>
-          Cantidad: <input type="number" min="1" value="${p.cantidad}" style="width:60px">
-        </p>
-        <p>Subtotal: $${(p.precio * p.cantidad).toFixed(2)}</p>
+        <div class="info-item d-flex flex-md-column">
+          <p>Precio unitario:</p>
+          <span>$${p.precio}</span>
+        </div>
+        <div class="info-item d-flex flex-md-column">
+          <p>Cantidad:</p>
+          <input type="number" min="1" value="${p.cantidad}" style="width:60px">
+        </div>
+        <div class="info-item d-flex flex-md-column">
+          <p>Subtotal:</p>
+          <span>$${(p.precio * p.cantidad).toFixed(2)}</span>
+        </div>
+        <button class="btn btn-danger">x</button>
       </div>
-      <button class="btn btn-danger">Retirar todos los productos</button>
     `;
 
     div.querySelector('input').addEventListener('change', e => {
@@ -48,13 +55,50 @@ function render() {
 
 render();
 
+// Manejo del botón Finalizar Compra
 document.getElementById('comprar').addEventListener('click', () => {
-  if (carrito.obtenerCarrito().length === 0) {
-    alert('El carrito está vacío');
-    return;
-  }
+    if (carrito.obtenerCarrito().length === 0) {
+        // Alerta de error si el carrito está vacío
+        Swal.fire({
+            icon: 'error',
+            title: '¡Carrito vacío!',
+            text: 'Debes agregar al menos un producto para finalizar la compra.',
+            confirmButtonColor: '#ef4444' // Rojo
+        });
+        return;
+    }
 
-  alert('¡Compra realizada!');
-  carrito.vaciar();
-  render();
+    // Alerta de éxito al finalizar la compra
+    Swal.fire({
+        title: '¡Confirmar Pedido!',
+        text: "¿Estás listo para finalizar tu compra en JESA Sports?",
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#10b981', // Verde JESA
+        cancelButtonColor: '#6b7280', // Gris
+        confirmButtonText: 'Sí, comprar ahora',
+        cancelButtonText: 'Seguir mirando'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Animación de carga procesando el "pago"
+            Swal.fire({
+                title: 'Procesando...',
+                timer: 2000,
+                timerProgressBar: true,
+                didOpen: () => {
+                    Swal.showLoading()
+                }
+            }).then(() => {
+                // Éxito final
+                Swal.fire({
+                    icon: 'success',
+                    title: '¡Gracias por tu compra!',
+                    text: 'Tu pedido ha sido procesado con éxito.',
+                    confirmButtonColor: '#10b981'
+                });
+                carrito.vaciar();
+                render();
+            });
+        }
+    });
 });
