@@ -2,166 +2,164 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuestro Equipo de Desarrollo</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuestro Equipo | JESA Sports</title>
 
-    <style>
-        /* Animación para las tarjetas */
-        @keyframes reveal {
-            0% {
-                opacity: 0;
-                transform: translateY(30px) scale(0.95);
-            }
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
-            100% {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
+  <link rel="stylesheet" href="/src/css/styles.css">
+  <link rel="stylesheet" href="/src/css/hero-sections.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        .animate-reveal {
-            opacity: 0;
-            animation: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
+  <style>
+    @keyframes reveal {
+      0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
 
-        /* Retrasos para las tarjetas */
-        .delay-100 {
-            animation-delay: 0.1s;
-        }
+    .animate-reveal {
+      opacity: 0;
+      animation: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
 
-        .delay-200 {
-            animation-delay: 0.2s;
-        }
+    .delay-100 { animation-delay: 0.1s; }
+    .delay-200 { animation-delay: 0.2s; }
+    .delay-300 { animation-delay: 0.3s; }
+    .delay-400 { animation-delay: 0.4s; }
+    .delay-500 { animation-delay: 0.5s; }
 
-        .delay-300 {
-            animation-delay: 0.3s;
-        }
+    .card-hover {
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
 
-        .delay-400 {
-            animation-delay: 0.4s;
-        }
-
-        .delay-500 {
-            animation-delay: 0.5s;
-        }
-
-        /* Efecto interactivo adicional para las tarjetas */
-        .card-hover {
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .card-hover:hover {
-            transform: translateY(-8px) scale(1.02);
-        }
-    </style>
+    .card-hover:hover {
+      transform: translateY(-8px) scale(1.02);
+    }
+  </style>
 </head>
 
-<body class="bg-gray-100 py-12 px-4">
+<body class="bg-gray-100">
 
+  <div id="header-placeholder"></div>
+
+  <main class="py-16 px-4">
     <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-12 animate-fade-up">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Conoce a los Desarrolladores</h2>
-            <p class="text-gray-600 mt-2">El talento detrás de este gran proyecto</p>
-        </div>
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Conoce a los Desarrolladores</h2>
+        <p class="text-gray-600 mt-2">El talento detrás de este gran proyecto</p>
+      </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-            <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 animate-reveal delay-100 card-hover">
-                <div class="flex flex-col items-center p-8">
-                    <img class="w-32 h-32 rounded-full object-cover border-4 border-blue-500 mb-4"
-                        src="./src/img/Sandra.jpg" alt="Sandra Borboa">
-                    <h3 class="text-xl font-bold text-gray-800">Sandra Borboa</h3>
-                    <p class="text-blue-600 font-medium mb-4">Frontend Developer</p>
-                    <div class="flex space-x-4">
-                        <a href="https://www.linkedin.com/in/sandra-borboa/"
-                            class="text-gray-500 hover:text-blue-700 text-2xl transition-colors">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/sandraborboa"
-                            class="text-gray-500 hover:text-gray-900 text-2xl transition-colors">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 animate-reveal delay-100 card-hover">
-                <div class="flex flex-col items-center p-8">
-                    <img class="w-32 h-32 rounded-full object-cover border-4 border-green-500 mb-4"
-                        src="./src/img/Antonio.jpg" alt="Antonio Amaro">
-                    <h3 class="text-xl font-bold text-gray-800">Antonio Amaro</h3>
-                    <p class="text-green-600 font-medium mb-4">UI/UX Designer</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-500 hover:text-blue-700 text-2xl transition-colors">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/Antonio-Amaro" class="text-gray-500 hover:text-gray-900 text-2xl transition-colors">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 animate-reveal delay-200 card-hover">
-                <div class="flex flex-col items-center p-8">
-                    <img class="w-32 h-32 rounded-full object-cover border-4 border-red-500 mb-4"
-                        src="./src/img/Caixba.png" alt="Jonathan Caixba">
-                    <h3 class="text-xl font-bold text-gray-800">Jonathan Caixba</h3>
-                    <p class="text-red-600 font-medium mb-4">Backend Developer</p>
-                    <div class="flex space-x-4">
-                        <a href="https://www.linkedin.com/in/jonathan-caixba"
-                            class="text-gray-500 hover:text-blue-700 text-2xl transition-colors">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/JonathanCaixba"
-                            class="text-gray-500 hover:text-gray-900 text-2xl transition-colors">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 animate-reveal delay-300 card-hover">
-                <div class="flex flex-col items-center p-8">
-                    <img class="w-32 h-32 rounded-full object-cover border-4 border-purple-500 mb-4"
-                        src="./src/img/Erik.jpg" alt="Erik Pérez">
-                    <h3 class="text-xl font-bold text-gray-800">Erik Pérez</h3>
-                    <p class="text-purple-600 font-medium mb-4">Backend Developer</p>
-                    <div class="flex space-x-4">
-                        <a href="https://www.linkedin.com/in/erik-perez-d/"
-                            class="text-gray-500 hover:text-blue-700 text-2xl transition-colors">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="#" class="text-gray-500 hover:text-gray-900 text-2xl transition-colors">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 animate-reveal delay-400 card-hover">
-                <div class="flex flex-col items-center p-8">
-                    <img class="w-32 h-32 rounded-full object-cover border-4 border-yellow-500 mb-4"
-                        src="./src/img/Jorge.jpg" alt="Jorge Arturo">
-                    <h3 class="text-xl font-bold text-gray-800">Jorge Arturo</h3>
-                    <p class="text-yellow-600 font-medium mb-4">Backend Developer</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-500 hover:text-blue-700 text-2xl transition-colors">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="#" class="text-gray-500 hover:text-gray-900 text-2xl transition-colors">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+  <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 animate-reveal delay-100 card-hover">
+    <div class="flex flex-col items-center p-8">
+      <img class="w-32 h-32 rounded-full object-cover border-4 border-blue-500 mb-4"
+        src="./src/img/Sandra.jpg" alt="Sandra Borboa">
+      <h3 class="text-xl font-bold text-gray-800">Sandra Borboa</h3>
+      <p class="text-blue-600 font-medium mb-4">Frontend Developer</p>
+      <div class="flex space-x-4">
+        <a href="https://www.linkedin.com/in/sandra-borboa/"
+          class="text-gray-500 hover:text-blue-700 text-2xl transition-colors">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/sandraborboa"
+          class="text-gray-500 hover:text-gray-900 text-2xl transition-colors">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
     </div>
+  </div>
+
+  <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 animate-reveal delay-100 card-hover">
+    <div class="flex flex-col items-center p-8">
+      <img class="w-32 h-32 rounded-full object-cover border-4 border-green-500 mb-4"
+        src="./src/img/Antonio.jpg" alt="Antonio Amaro">
+      <h3 class="text-xl font-bold text-gray-800">Antonio Amaro</h3>
+      <p class="text-green-600 font-medium mb-4">UI/UX Designer</p>
+      <div class="flex space-x-4">
+        <a href="https://www.linkedin.com/in/joseantonioamaro/" class="text-gray-500 hover:text-blue-700 text-2xl transition-colors">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/Antonio-Amaro"
+          class="text-gray-500 hover:text-gray-900 text-2xl transition-colors">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 animate-reveal delay-200 card-hover">
+    <div class="flex flex-col items-center p-8">
+      <img class="w-32 h-32 rounded-full object-cover border-4 border-red-500 mb-4"
+        src="./src/img/Caixba.png" alt="Jonathan Caixba">
+      <h3 class="text-xl font-bold text-gray-800">Jonathan Caixba</h3>
+      <p class="text-red-600 font-medium mb-4">Backend Developer</p>
+      <div class="flex space-x-4">
+        <a href="https://www.linkedin.com/in/jonathan-caixba"
+          class="text-gray-500 hover:text-blue-700 text-2xl transition-colors">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/JonathanCaixba"
+          class="text-gray-500 hover:text-gray-900 text-2xl transition-colors">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 animate-reveal delay-300 card-hover">
+    <div class="flex flex-col items-center p-8">
+      <img class="w-32 h-32 rounded-full object-cover border-4 border-purple-500 mb-4"
+        src="./src/img/Erik.jpg" alt="Erik Pérez">
+      <h3 class="text-xl font-bold text-gray-800">Erik Pérez</h3>
+      <p class="text-purple-600 font-medium mb-4">Backend Developer</p>
+      <div class="flex space-x-4">
+        <a href="https://www.linkedin.com/in/erik-perez-d/"
+          class="text-gray-500 hover:text-blue-700 text-2xl transition-colors">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/z-erik" class="text-gray-500 hover:text-gray-900 text-2xl transition-colors">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 animate-reveal delay-400 card-hover">
+    <div class="flex flex-col items-center p-8">
+      <img class="w-32 h-32 rounded-full object-cover border-4 border-yellow-500 mb-4"
+        src="./src/img/Jorge.jpg" alt="Jorge Arturo">
+      <h3 class="text-xl font-bold text-gray-800">Jorge Arturo</h3>
+      <p class="text-yellow-600 font-medium mb-4">Backend Developer</p>
+      <div class="flex space-x-4">
+        <a href="https://www.linkedin.com/in/jorge-tierrablanca-fullstack/" class="text-gray-500 hover:text-blue-700 text-2xl transition-colors">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/TRRBLK" class="text-gray-500 hover:text-gray-900 text-2xl transition-colors">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script src="/src/js/loadComponents.js"></script>
 
 </body>
-
 </html>
