@@ -15,7 +15,7 @@ function render() {
     div.className = 'card mb-3 p-3 carrito-item d-flex flex-column flex-md-row align-items-start gap-2';
 
     div.innerHTML = `
-      <img src="${p.imagen || 'src/img/sin-imagen.png'}" alt="${p.nombre}">
+      <img  style="width:100px; "class="" src="${p.imagen || 'src/img/sin-imagen.png'}" alt="${p.nombre}">
       <div class="d-flex flex-column flex-md-row gap-1 align-items-start justify-content-between w-100">
         <h5>${p.nombre}</h5>
         <div class="info-item d-flex flex-md-column">
