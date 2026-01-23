@@ -46,6 +46,7 @@ header{
 }
 
 .navbar-custom{
+  /* background-color: rgba(0, 127, 76, 0.85); */
   background-color: var(--brand-green);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);

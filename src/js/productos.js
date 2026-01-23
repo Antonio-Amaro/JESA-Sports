@@ -1,5 +1,12 @@
 const controladorProductos = new ProductosController();
+const carrito = new CarritoController();
 const contenedor = document.getElementById('contenedorProductos');
+const contadorCarrito = document.getElementById('contadorCarrito');
+
+function actualizarContador() {
+  const totalItems = carrito.obtenerCarrito().reduce((acc, p) => acc + p.cantidad, 0);
+  contadorCarrito.textContent = totalItems;
+}
 
 async function mostrarProductos() {
   if (controladorProductos.productos.length === 0) {
@@ -14,26 +21,29 @@ async function mostrarProductos() {
 
     articulo.innerHTML = `
       <div class="card h-100">
-        <img 
-  src="${producto.imagen || 'src/img/sin-imagen.png'}"
-  class="card-img-top"
-  alt="${producto.nombre}"
->
-        <div class="card-body">
+        <img src="${producto.imagen || 'src/img/sin-imagen.png'}"
+             class="card-img-top" alt="${producto.nombre}">
+        <div class="card-body d-flex flex-column">
           <h5 class="card-title">${producto.nombre}</h5>
           <p class="card-text">${producto.descripcion}</p>
-          <ul class="list-unstyled">
-            <li><strong>Tipo:</strong> ${producto.tipo}</li>
-            <li><strong>Género:</strong> ${producto.genero}</li>
-            <li><strong>Deporte:</strong> ${producto.deporte}</li>
-            <li><strong>Precio:</strong> $${producto.precio}</li>
-          </ul>
+          <p><strong>$${producto.precio}</strong></p>
+          <button class="btn btn-primary mt-auto btn-agregar">
+             Añadir al carrito
+          </button>
         </div>
       </div>
     `;
 
+    articulo.querySelector('.btn-agregar').addEventListener('click', () => {
+      carrito.agregarProducto(producto);
+      actualizarContador();
+      alert('el producto fue añadido al carrito');
+    });
+
     contenedor.appendChild(articulo);
   });
+
+  actualizarContador();
 }
 
 mostrarProductos();
