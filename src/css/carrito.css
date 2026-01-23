@@ -18,6 +18,15 @@ body {
         .cart-item {
             transition: all 0.3s ease;
         }
+        .info-item {
+            width: 100%;
+            justify-content: space-between;
+        }
+        @media (min-width: 768px) {
+            .info-item {
+                width: auto;
+            }
+        }
         .btn-remove {
             font-size: 0.85rem;
             color: #dc3545;
