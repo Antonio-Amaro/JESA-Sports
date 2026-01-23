@@ -48,13 +48,50 @@ function render() {
 
 render();
 
+// Manejo del botón Finalizar Compra
 document.getElementById('comprar').addEventListener('click', () => {
-  if (carrito.obtenerCarrito().length === 0) {
-    alert('El carrito está vacío');
-    return;
-  }
+    if (carrito.obtenerCarrito().length === 0) {
+        // Alerta de error si el carrito está vacío
+        Swal.fire({
+            icon: 'error',
+            title: '¡Carrito vacío!',
+            text: 'Debes agregar al menos un producto para finalizar la compra.',
+            confirmButtonColor: '#ef4444' // Rojo
+        });
+        return;
+    }
 
-  alert('¡Compra realizada!');
-  carrito.vaciar();
-  render();
+    // Alerta de éxito al finalizar la compra
+    Swal.fire({
+        title: '¡Confirmar Pedido!',
+        text: "¿Estás listo para finalizar tu compra en JESA Sports?",
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#10b981', // Verde JESA
+        cancelButtonColor: '#6b7280', // Gris
+        confirmButtonText: 'Sí, comprar ahora',
+        cancelButtonText: 'Seguir mirando'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Animación de carga procesando el "pago"
+            Swal.fire({
+                title: 'Procesando...',
+                timer: 2000,
+                timerProgressBar: true,
+                didOpen: () => {
+                    Swal.showLoading()
+                }
+            }).then(() => {
+                // Éxito final
+                Swal.fire({
+                    icon: 'success',
+                    title: '¡Gracias por tu compra!',
+                    text: 'Tu pedido ha sido procesado con éxito.',
+                    confirmButtonColor: '#10b981'
+                });
+                carrito.vaciar();
+                render();
+            });
+        }
+    });
 });
